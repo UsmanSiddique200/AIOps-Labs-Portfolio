@@ -1,0 +1,61 @@
+# Docker Image Discovery
+
+docker search ubuntu
+docker search nginx
+docker search --limit 5 python
+
+# Pull Images
+
+docker pull ubuntu
+docker pull ubuntu:20.04
+docker pull ubuntu:22.04
+docker pull nginx:alpine
+docker pull python:3.9-slim
+
+# List Images
+
+docker images
+docker images --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}"
+docker images ubuntu
+docker images -q
+docker images -a
+
+# Remove Images
+
+docker rmi ubuntu:20.04
+docker images python:3.9-slim
+docker rmi [IMAGE_ID]
+docker rmi -f nginx:alpine
+docker rmi ubuntu:22.04 python:3.9-slim
+
+# Cleanup
+
+docker image prune
+docker rmi $(docker images -q)
+
+# Run Containers
+
+docker pull ubuntu:22.04
+docker run -it ubuntu:22.04 /bin/bash
+
+cat /etc/os-release
+
+exit
+
+# Image Tagging
+
+docker tag ubuntu:22.04 my-ubuntu:production
+docker images | grep my-ubuntu
+docker images ubuntu:22.04
+docker images my-ubuntu:production
+
+# Image Inspection
+
+docker inspect ubuntu:22.04
+docker inspect --format='{{.Architecture}}' ubuntu:22.04
+docker inspect --format='{{.Created}}' ubuntu:22.04
+docker inspect --format='{{.Size}}' ubuntu:22.04
+
+# Layer Analysis
+
+docker history ubuntu:22.04
