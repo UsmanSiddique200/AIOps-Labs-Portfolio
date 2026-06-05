@@ -188,7 +188,7 @@ Key findings:
 
 ### Docker Layer Analysis
 
-![Docker History](screenshots/10-docker-history-output.png)
+![Docker History](screenshots/11-image-layer-analysis.png)
 
 ## Evidence of Hands-On Work
 
