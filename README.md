@@ -29,14 +29,14 @@ This repository documents my hands-on journey through AIOps, DevOps, Docker, Kub
 ## Repository Structure
 
 AIOps-Labs-Portfolio/
-│
-├── Docker/
-├── Kubernetes/
-├── Linux/
-├── Monitoring/
-├── Automation/
-├── Cloud/
-└── README.md
+
+- Docker/
+- Kubernetes/
+- Linux/
+- Monitoring/
+- Automation/
+- Cloud/
+- README.md
 
 ## Learning Approach
 
