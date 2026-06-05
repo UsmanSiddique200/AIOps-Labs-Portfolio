@@ -1,4 +1,4 @@
-# Docker Lab 01 -Introduction to Docker - What is Docker? 
+# Docker Lab-01-Introduction-to-Docker 
 # Commands Used
 
 sudo apt update
