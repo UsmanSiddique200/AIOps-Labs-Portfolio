@@ -74,7 +74,32 @@ Virtual Machines:
 
 ## Screenshots
 
-Screenshots are available in the screenshots directory.
+### Docker Installation
+
+![Docker Installation](screenshots/01-docker-installation1.png)
+![Docker Installation](screenshots/01-docker-installation2.png)
+![Docker Installation](screenshots/01-docker-installation3.png)
+
+### Docker Version
+
+![Docker Version](screenshots/02-docker-version.png)
+
+### Hello World Container
+
+![Hello World](screenshots/03-hello-world-container.png)
+
+### Docker Images
+
+![Docker Images](screenshots/05-docker-images.png)
+
+### Docker Container
+
+![Docker Container](screenshots/04-docker-ps.png)
+![Docker Container](screenshots/04-docker-ps-a.png)
+
+### Docker Info
+
+![Docker Info](screenshots/docker-info.png)
 
 ## Conclusion
 
