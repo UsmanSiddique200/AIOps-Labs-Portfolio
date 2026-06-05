@@ -74,11 +74,15 @@ Virtual Machines:
 
 ## Screenshots
 
-### Docker Installation
+### System Update
 
 ![System Update](screenshots/01-system-update.png)
 
+### Dependencies Installation
+
 ![Dependencies Installation](screenshots/02-install-dependencies.png)
+
+### Docker Installation
 
 ![Docker Installation](screenshots/03-docker-installation.png)
 
@@ -90,9 +94,11 @@ Virtual Machines:
 
 ![Hello World Container](screenshots/05-hello-world-container.png)
 
-### Docker Container
+### Running Container
 
 ![Running Containers](screenshots/06-docker-ps.png)
+
+### All Docker Containers
 
 ![All Containers](screenshots/07-docker-ps-a.png)
 
