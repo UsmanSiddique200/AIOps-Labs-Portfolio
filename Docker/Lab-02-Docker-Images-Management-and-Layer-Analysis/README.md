@@ -36,9 +36,9 @@ The exercises were performed in a Linux environment using Docker Engine and incl
 
 ## Lab Activities Performed
 
-### 1. Docker Hub Exploration
+### Docker Hub Image Discovery
 
-Searched and evaluated public images using:
+Docker Hub was explored using Docker CLI to identify official and community-maintained images. Ubuntu, Nginx, and Python repositories were analyzed based on popularity, official status, and use-case suitability.
 
 docker search ubuntu
 docker search nginx
@@ -166,22 +166,48 @@ Key findings:
 
 ## Screenshots
 
-| Screenshot | Description                 |
-| ---------- | --------------------------- |
-| 01         | Docker Hub image search     |
-| 02         | Nginx repository search     |
-| 03         | Pulling Ubuntu image        |
-| 04         | Listing local images        |
-| 05         | Formatted image output      |
-| 06         | Running Ubuntu container    |
-| 07         | Ubuntu version verification |
-| 08         | Custom image tagging        |
-| 09         | Docker inspect results      |
-| 10         | Docker history output       |
-| 11         | Layer analysis              |
-| 12         | Cleanup operations          |
+### Docker Image Search
 
----
+![Docker Search Ubuntu](screenshots/01-docker-search-ubuntu.png)
+
+### Listing Local Docker Images
+
+![Docker Images](screenshots/04-docker-images-list.png)
+
+### Running Ubuntu Container
+
+![Ubuntu Container](screenshots/06-running-ubuntu-container.png)
+
+### Custom Image Tagging
+
+![Custom Tag](screenshots/08-custom-image-tag.png)
+
+### Docker Image Inspection
+
+![Docker Inspect](screenshots/09-docker-inspect-output.png)
+
+### Docker Layer Analysis
+
+![Docker History](screenshots/10-docker-history-output.png)
+
+## Evidence of Hands-On Work
+
+All screenshots captured during lab execution are available in the `screenshots/` directory.
+
+| File | Description |
+|--------|------------|
+| 01-docker-search-ubuntu.png | Searching Docker Hub for Ubuntu images |
+| 02-docker-search-nginx.png | Searching Docker Hub for Nginx images |
+| 03-docker-pull-ubuntu.png | Pulling Ubuntu image |
+| 04-docker-images-list.png | Listing local Docker images |
+| 05-image-format-output.png | Formatted image output |
+| 06-running-ubuntu-container.png | Running Ubuntu container |
+| 07-os-release-inside-container.png | Verifying Ubuntu version |
+| 08-custom-image-tag.png | Creating custom image tag |
+| 09-docker-inspect-output.png | Inspecting image metadata |
+| 10-docker-history-output.png | Viewing image history |
+| 11-image-layer-analysis.png | Docker layer analysis |
+| 12-docker-cleanup.png | Docker cleanup operations |
 
 ## Key Concepts Learned
 
