@@ -77,7 +77,9 @@ Virtual Machines:
 ### Docker Installation
 
 ![System Update](screenshots/01-system-update.png)
+
 ![Dependencies Installation](screenshots/02-install-dependencies.png)
+
 ![Docker Installation](screenshots/03-docker-installation.png)
 
 ### Docker Version
@@ -91,6 +93,7 @@ Virtual Machines:
 ### Docker Container
 
 ![Running Containers](screenshots/06-docker-ps.png)
+
 ![All Containers](screenshots/07-docker-ps-a.png)
 
 ### Docker Images
