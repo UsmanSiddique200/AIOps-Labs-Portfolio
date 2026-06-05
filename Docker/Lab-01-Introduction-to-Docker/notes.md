@@ -1,3 +1,4 @@
+</> Markdown
 # Notes
 
 ## Docker
@@ -15,6 +16,19 @@ Docker is a containerization platform that allows applications to run consistent
 - Running instance of an image
 - Isolated process
 - Lightweight
+
+## Key Difference: Image vs Container
+
+Image:
+- Template
+- Read-only
+
+Container:
+- Running instance of an image
+
+## Why Docker Matters
+
+Docker helps developers package applications with dependencies and run them consistently across environments.
 
 ## Useful Commands
 

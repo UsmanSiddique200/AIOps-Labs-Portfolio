@@ -1,4 +1,4 @@
-# Docker Lab 01 - Introduction to Docker - What is Docker?
+# Docker Lab-01-Introduction-to-Docker
 
 ## Overview
 
@@ -76,30 +76,42 @@ Virtual Machines:
 
 ### Docker Installation
 
-![Docker Installation](screenshots/01-docker-installation1.png)
-![Docker Installation](screenshots/01-docker-installation2.png)
-![Docker Installation](screenshots/01-docker-installation3.png)
+![System Update](screenshots/01-system-update.png)
+![Dependencies Installation](screenshots/02-install-dependencies.png)
+![Docker Installation](screenshots/03-docker-installation.png)
 
 ### Docker Version
 
-![Docker Version](screenshots/02-docker-version.png)
+![Docker Version](screenshots/04-docker-version.png)
 
 ### Hello World Container
 
-![Hello World](screenshots/03-hello-world-container.png)
-
-### Docker Images
-
-![Docker Images](screenshots/05-docker-images.png)
+![Hello World Container](screenshots/05-hello-world-container.png)
 
 ### Docker Container
 
-![Docker Container](screenshots/04-docker-ps.png)
-![Docker Container](screenshots/04-docker-ps-a.png)
+![Running Containers](screenshots/06-docker-ps.png)
+![All Containers](screenshots/07-docker-ps-a.png)
+
+### Docker Images
+
+![Docker Images](screenshots/08-docker-images.png)
 
 ### Docker Info
 
-![Docker Info](screenshots/docker-info.png)
+![Docker Info](screenshots/09-docker-info.png)
+
+## Challenges Faced
+
+- Understanding the difference between Docker images and containers
+- Learning Docker's installation process on Ubuntu
+- Managing container lifecycle commands
+
+## Solutions
+
+- Practiced using Docker CLI commands
+- Explored container creation and removal workflows
+- Compared containers with traditional virtual machines
 
 ## Conclusion
 
