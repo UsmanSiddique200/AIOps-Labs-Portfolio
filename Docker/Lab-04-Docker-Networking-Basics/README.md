@@ -180,7 +180,7 @@ docker ps -a
 * ![Cross Boundary Protection Blocks](screenshots/05-network-isolation.png)  
   *Validating total cross-network traffic blocking to ensure absolute data tier separation.*
 * ![Multi-Homing Route Mapping Verification](screenshots/06a-multi-network.png)
-* ![Multi-Homing Route Mapping Verification](screenshots/06b-multi-network.png) 
+* ![Multi-Homing Route Mapping Verification](screenshots/06b-multi-network.png)   
   *Attaching active runtime systems to multiple segments simultaneously to unlock multi-point transport capability.*
 
 ### Phase 4: Public Ingress Rules & Sandbox Purging
