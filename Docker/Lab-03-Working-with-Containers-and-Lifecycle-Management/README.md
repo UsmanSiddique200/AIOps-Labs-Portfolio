@@ -1,10 +1,5 @@
 # Lab 03: Working with Containers and Lifecycle Management
 
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Ubuntu Linux](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
-[![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
-[![Alnafi AIOps](https://img.shields.io/badge/Alnafi-AIOps_Portfolio-orange?style=for-the-badge)](https://alnafi.edu.pk/)
-
 ## 🎯 Lab Objectives
 
 In this laboratory module, I focused on managing the full lifecycle of Docker containers on a pre-configured Ubuntu Linux host. Through hands-on practice, I developed skills mapped directly to the Docker Certified Associate (DCA) certification pathway, including:
@@ -145,8 +140,9 @@ docker rm $(docker ps -aq)
 ### Phase 3: Runtime State Cycling & Sandbox Housekeeping
 * ![Workload Data Durability Logs](screenshots/05-durability-validation.png)  
   *Validating that the tracking text file remains readable inside the guest environment after a full container stop and restart sequence.*
-* ![Bulk Resource Housekeeping](screenshots/06-system-cleanup.png)  
-  *Wiping the node workspace clean using scripted expansion parameters before finalizing the laboratory run.*
+* ![Bulk Resource Housekeeping](screenshots/06-system-cleanup.png)
+  * *Wiping the node workspace clean using scripted expansion parameters before finalizing the laboratory run.*
+
 
 ---
 
