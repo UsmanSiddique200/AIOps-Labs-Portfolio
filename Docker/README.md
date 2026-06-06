@@ -6,7 +6,12 @@ This directory contains hands-on Docker labs completed as part of my AIOps and D
 
 | Lab    | Topic                  |
 | ------ | ---------------------- |
-| Lab 01 | Introduction to Docker |
+| Lab 01 | Introduction-to-Docker |
+| Lab 02 | Docker-Images-Management-and-Layer-Analysis |
+| Lab 03 | Working-with-Containers-and-Lifecycle-Management |
+| Lab 04 | Docker-Networking-Basics |
+| Lab 05 | Docker-Volumes-for-Persistent-Storage |
+| Lab 06 | Introduction to Docker |
 
 ## Skills Covered
 
