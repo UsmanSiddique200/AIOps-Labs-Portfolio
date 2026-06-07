@@ -232,11 +232,13 @@ docker system prune -f
 *   **Layer Optimization:** Placed `COPY app/requirements.txt ./` before migrating general source repositories (`COPY app/ .`). This enforces intelligent layer caching, skipping expensive dependency tracking steps (`pip install`) unless dependency files change.
 *   **Minimal Base Images:** Employed `python:3.11-slim` instead of standard fat images. This drops image sizes to ~125MB, decreasing attack surfaces and deployment network transfer latency.
 *   **Security Isolation via Least Privilege:** Swapped standard administrative root bindings out by declaring explicit security permissions:
+
 ```dockerfile
     RUN groupadd -r appuser && useradd -r -g appuser appuser
     USER appuser
     ```
-    This stops container breakouts from accessing the underlying host systems.
+
+    *Takeaway:* Dropping runtime access privileges stops potential container breakout vulnerabilities from gaining administrative command vectors on the underlying host Linux kernel.
 *   **Engine Failure Recovery Audits:** Integrated structural tracking parameters directly into image metadata configurations via proactive monitoring:
 ```dockerfile
     HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
