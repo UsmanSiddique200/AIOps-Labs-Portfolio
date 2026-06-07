@@ -229,6 +229,7 @@ docker system prune -f
 ## 📝 My Learning Notes
 
 ### Dockerfile Structural Best Practices
+
 *   **Layer Optimization:** Placed `COPY app/requirements.txt ./` before migrating general source repositories (`COPY app/ .`). This enforces intelligent layer caching, skipping expensive dependency tracking steps (`pip install`) unless dependency files change.
 *   **Minimal Base Images:** Employed `python:3.11-slim` instead of standard fat images. This drops image sizes to ~125MB, decreasing attack surfaces and deployment network transfer latency.
 *   **Security Isolation via Least Privilege:** Swapped standard administrative root bindings out by declaring explicit security permissions:
@@ -240,12 +241,14 @@ docker system prune -f
 
     *Takeaway:* Dropping runtime access privileges stops potential container breakout vulnerabilities from gaining administrative command vectors on the underlying host Linux kernel.
 *   **Engine Failure Recovery Audits:** Integrated structural tracking parameters directly into image metadata configurations via proactive monitoring:
+
 ```dockerfile
     HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
       CMD curl -f http://localhost:$PORT/ || exit 1
     ```
 
 ### Decoupling Logic from Runtime Environments
+
 *   **Configuration Variables (`ENV` vs. Runtime `-e`):** Explicitly managed state properties through decoupled configurations. Implemented standard variable tracking maps using fallback options inside application architectures (`os.environ.get()`), and mapped these states cleanly via native Docker Compose variable maps.
 
 ---
@@ -253,6 +256,7 @@ docker system prune -f
 ## 📸 Step-by-Step Verification Screenshots
 
 ### Phase 1: Context Verification & Image Assembly
+
 *   **Workspace Validation Listing:** Verifying project workspace tracking files structure prior to execution.
 ![Workspace File Structure Tree View](screenshots/01-workspace-tree.png)
 *   **Container Blueprint Compilation:** Monitoring granular build steps, layer assembly, and caching engine outputs during execution.
@@ -261,6 +265,7 @@ docker system prune -f
 ![Docker Images Command Logs](screenshots/03-image-registry-listing.png)
 
 ### Phase 2: Running Containers & Live Audits
+
 *   **Production Tier Engine Activations:** Confirming runtime engine state loops, detached network exposures, and internal tracking names.
 ![Docker PS Runtime Container Audits](screenshots/04-active-containers-list.png)
 *   **Data Verification Request Profiles:** Verifying live web socket feedback, internal tracking arrays, and metadata signatures.
@@ -269,6 +274,7 @@ docker system prune -f
 ![Interactive Container Execution Logs](screenshots/06-container-exec-shell.png)
 
 ### Phase 3: Multiple Environments & Environment Variable Overrides
+
 *   **Parallel Isolation Tier Architecture:** Verifying parallel test operations across unique isolation configurations (Production vs Development tiers).
 ![Multi-Container Target Configurations Comparative Logs](screenshots/07-multi-environment-comparison.png)
 *   **Active Microservices Resource Monitoring Profiles:** Sampling standard system computational statistics, tracking processing streams, and tracing system memory.
@@ -279,6 +285,7 @@ docker system prune -f
 ## 🛠️ Troubleshooting & Engineering Insights
 
 ### Issue 1: Image Assembly Failure Due to Local Account Permission Errors
+
 *   **The Root Issue:** The execution user profile lacks explicit group membership links inside the system `docker` engineering daemon socket mappings (`/var/run/docker.sock`), causing file validation failures.
 *   **My Fix:** Permanently map user security accounts over to target platform management teams and immediately reload session environmental permissions:
 ```bash
@@ -287,6 +294,7 @@ docker system prune -f
     ```
 
 ### Issue 2: Socket Deployment Collisions (Port Already in Use)
+
 *   **The Root Issue:** The target host interface port socket mapping (`8080`) is already locked down by a conflicting service block or stale legacy container allocation.
 *   **My Fix:** Query system network mapping files to isolate conflicting application processes, extract unique process target tags, and purge competing container environments programmatically:
 ```bash
@@ -295,6 +303,7 @@ docker system prune -f
     ```
 
 ### Issue 3: Volatile Lifecycle Faults (Containers Exiting Immediately)
+
 *   **The Root Issue:** The internal entrypoint processes or configuration scripts crashed right after launch due to unhandled exceptions, missing dependency packages, or syntax execution bugs.
 *   **My Fix:** Audit internal terminal message queues to locate runtime exceptions, or bypass the standard entrypoint configuration to run live diagnostic steps directly in a secure sandbox:
 ```bash
