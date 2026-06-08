@@ -234,16 +234,17 @@ docker system prune -f
 *   **Minimal Base Images:** Employed `python:3.11-slim` instead of standard fat images. This drops image sizes to ~125MB, decreasing attack surfaces and deployment network transfer latency.
 *   **Security Isolation via Least Privilege:** Swapped standard administrative root bindings out by declaring explicit security permissions:
 
-    RUN groupadd -r appuser && useradd -r -g appuser appuser
-    USER appuser
-    
+```dockerfile
+RUN groupadd -r appuser && useradd -r -g appuser appuser
+USER appuser
+```
 
-    *Takeaway:* Dropping runtime access privileges stops potential container breakout vulnerabilities from gaining administrative command vectors on the underlying host Linux kernel.
 *   **Engine Failure Recovery Audits:** Integrated structural tracking parameters directly into image metadata configurations via proactive monitoring:
 
-    HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-      CMD curl -f http://localhost:$PORT/ || exit 1
-    
+```dockerfile
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:$PORT/ || exit 1
+```
 
 ### Decoupling Logic from Runtime Environments
 
@@ -256,27 +257,27 @@ docker system prune -f
 ### Phase 1: Context Verification & Image Assembly
 
 *   **Workspace Validation Listing:** Verifying project workspace tracking files structure prior to execution.
-![Workspace File Structure Tree View](screenshots/01-workspace-tree.png)
+    ![Workspace File Structure Tree View](screenshots/01-workspace-tree.png)
 *   **Container Blueprint Compilation:** Monitoring granular build steps, layer assembly, and caching engine outputs during execution.
-![Docker Build Execution Traces](screenshots/02-docker-build-output.png)
+    ![Docker Build Execution Traces](screenshots/02-docker-build-output.png)
 *   **Local Registries Discovery Inventory:** Confirming the custom image registry records repository details, tags, and sizes cleanly.
-![Docker Images Command Logs](screenshots/03-image-registry-listing.png)
+    ![Docker Images Command Logs](screenshots/03-image-registry-listing.png)
 
 ### Phase 2: Running Containers & Live Audits
 
 *   **Production Tier Engine Activations:** Confirming runtime engine state loops, detached network exposures, and internal tracking names.
-![Docker PS Runtime Container Audits](screenshots/04-active-containers-list.png)
+    ![Docker PS Runtime Container Audits](screenshots/04-active-containers-list.png)
 *   **Data Verification Request Profiles:** Verifying live web socket feedback, internal tracking arrays, and metadata signatures.
-![Curl Payload Format Output Testing](screenshots/05-application-curl-response.png)
+    ![Curl Payload Format Output Testing](screenshots/05-application-curl-response.png)
 *   **Internal Component System Shell Checks:** Tracking isolated storage trees, processing tables, and directory variables inside the container environment.
-![Interactive Container Execution Logs](screenshots/06-container-exec-shell.png)
+    ![Interactive Container Execution Logs](screenshots/06-container-exec-shell.png)
 
 ### Phase 3: Multiple Environments & Environment Variable Overrides
 
 *   **Parallel Isolation Tier Architecture:** Verifying parallel test operations across unique isolation configurations (Production vs Development tiers).
-![Multi-Container Target Configurations Comparative Logs](screenshots/07-multi-environment-comparison.png)
+    ![Multi-Container Target Configurations Comparative Logs](screenshots/07-multi-environment-comparison.png)
 *   **Active Microservices Resource Monitoring Profiles:** Sampling standard system computational statistics, tracking processing streams, and tracing system memory.
-![Docker Stats Performance Dashboards](screenshots/08-container-resource-stats.png)
+    ![Docker Stats Performance Dashboards](screenshots/08-container-resource-stats.png)
 
 ---
 
@@ -286,28 +287,28 @@ docker system prune -f
 
 *   **The Root Issue:** The execution user profile lacks explicit group membership links inside the system `docker` engineering daemon socket mappings (`/var/run/docker.sock`), causing file validation failures.
 *   **My Fix:** Permanently map user security accounts over to target platform management teams and immediately reload session environmental permissions:
-```bash
-    sudo usermod -aG docker $USER
-    newgrp docker
-    ```
+    ```bash
+sudo usermod -aG docker $USER
+newgrp docker
+```
 
 ### Issue 2: Socket Deployment Collisions (Port Already in Use)
 
 *   **The Root Issue:** The target host interface port socket mapping (`8080`) is already locked down by a conflicting service block or stale legacy container allocation.
 *   **My Fix:** Query system network mapping files to isolate conflicting application processes, extract unique process target tags, and purge competing container environments programmatically:
-```bash
-    sudo netstat -tulpn | grep :8080
-    docker stop $(docker ps -q --filter "publish=8080")
-    ```
+    ```bash
+sudo netstat -tulpn | grep :8080
+docker stop $(docker ps -q --filter "publish=8080")
+```
 
 ### Issue 3: Volatile Lifecycle Faults (Containers Exiting Immediately)
 
 *   **The Root Issue:** The internal entrypoint processes or configuration scripts crashed right after launch due to unhandled exceptions, missing dependency packages, or syntax execution bugs.
 *   **My Fix:** Audit internal terminal message queues to locate runtime exceptions, or bypass the standard entrypoint configuration to run live diagnostic steps directly in a secure sandbox:
-```bash
+    ```bash
     docker logs my-python-app-v2
     docker run -it --rm myimage:v2 bash
-    ```
+```
 
 ---
 
