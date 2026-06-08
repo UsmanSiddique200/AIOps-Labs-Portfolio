@@ -285,29 +285,35 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 ### Issue 1: Image Assembly Failure Due to Local Account Permission Errors
 
-*   **The Root Issue:** The execution user profile lacks explicit group membership links inside the system `docker` engineering daemon socket mappings (`/var/run/docker.sock`), causing file validation failures.
-*   **My Fix:** Permanently map user security accounts over to target platform management teams and immediately reload session environmental permissions:
-    ```bash
+**The Root Issue:** The execution user profile lacks explicit group membership links inside the system `docker` engineering daemon socket mappings (`/var/run/docker.sock`), causing file validation failures.
+
+**My Fix:** Permanently map user security accounts over to target platform management teams and immediately reload session environmental permissions:
+
+```bash
 sudo usermod -aG docker $USER
 newgrp docker
 ```
 
 ### Issue 2: Socket Deployment Collisions (Port Already in Use)
 
-*   **The Root Issue:** The target host interface port socket mapping (`8080`) is already locked down by a conflicting service block or stale legacy container allocation.
-*   **My Fix:** Query system network mapping files to isolate conflicting application processes, extract unique process target tags, and purge competing container environments programmatically:
-    ```bash
+**The Root Issue:** The target host interface port socket mapping (`8080`) is already locked down by a conflicting service block or stale legacy container allocation.
+
+**My Fix:** Query system network mapping files to isolate conflicting application processes, extract unique process target tags, and purge competing container environments programmatically:
+
+```bash
 sudo netstat -tulpn | grep :8080
 docker stop $(docker ps -q --filter "publish=8080")
 ```
 
 ### Issue 3: Volatile Lifecycle Faults (Containers Exiting Immediately)
 
-*   **The Root Issue:** The internal entrypoint processes or configuration scripts crashed right after launch due to unhandled exceptions, missing dependency packages, or syntax execution bugs.
-*   **My Fix:** Audit internal terminal message queues to locate runtime exceptions, or bypass the standard entrypoint configuration to run live diagnostic steps directly in a secure sandbox:
-    ```bash
-    docker logs my-python-app-v2
-    docker run -it --rm myimage:v2 bash
+**The Root Issue:** The internal entrypoint processes or configuration scripts crashed right after launch due to unhandled exceptions, missing dependency packages, or syntax execution bugs.
+
+**My Fix:** Audit internal terminal message queues to locate runtime exceptions, or bypass the standard entrypoint configuration to run live diagnostic steps directly in a secure sandbox:
+
+```bash
+docker logs my-python-app-v2
+docker run -it --rm myimage:v2 bash
 ```
 
 ---
